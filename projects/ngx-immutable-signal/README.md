@@ -4,7 +4,7 @@ Immutable Signals for Angular 16+.
 
 ## Description
 
-This library provides a `immutableSignal` function to create an Immutable Signal that uses [immer](https://www.npmjs.com/package/immer) in its write functions.
+This library provides a `immutableSignal` function to create an Immutable Signal that uses [immer](https://www.npmjs.com/package/immer) in its write functions. This results in two key differences:
 
 1. The read value is immutable and can only be updated with the write functions `set`, `update` and `mutate`.
 2. Changes inside of nested objects update the reference of parent objects.
