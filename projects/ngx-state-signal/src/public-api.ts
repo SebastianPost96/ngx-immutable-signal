@@ -1,7 +1,5 @@
 /*
- * Public API Surface of ngx-state-signal
+ * Public API Surface of ngx-immutable-signal
  */
 
-export * from './lib/ngx-state-signal.service';
-export * from './lib/ngx-state-signal.component';
-export * from './lib/ngx-state-signal.module';
+export * from './lib/immutable-signal';

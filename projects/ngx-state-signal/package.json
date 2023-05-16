@@ -1,12 +1,29 @@
 {
-  "name": "ngx-state-signal",
-  "version": "0.0.1",
+  "name": "ngx-immutable-signal",
+  "version": "1.0.0",
   "peerDependencies": {
-    "@angular/common": "^15.2.0",
-    "@angular/core": "^15.2.0"
+    "@angular/core": ">=16.0.1"
   },
   "dependencies": {
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "immer": "^10.0.2"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "author": "Sebastian Post",
+  "description": "Immutable Signals for Angular 16+.",
+  "keywords": [
+    "Angular",
+    "signals",
+    "immutable",
+    "mutable",
+    "state"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SebastianPost96/ngx-immutable-signal"
+  },
+  "bugs": {
+    "url": "https://github.com/SebastianPost96/ngx-immutable-signal/issues"
+  }
 }

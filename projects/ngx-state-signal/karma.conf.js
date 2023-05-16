@@ -25,7 +25,10 @@ module.exports = function (config) {
       suppressAll: true, // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require("path").join(__dirname, "../../coverage/ngx-state-signal"),
+      dir: require("path").join(
+        __dirname,
+        "../../coverage/ngx-immutable-signal"
+      ),
       subdir: ".",
       reporters: [{ type: "html" }, { type: "text-summary" }],
     },
