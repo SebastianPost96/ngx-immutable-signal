@@ -3,5 +3,6 @@
   "dest": "../../dist/ngx-immutable-signal",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": ["immer"]
 }
