@@ -1,6 +1,6 @@
 {
   "name": "ngx-immutable-signal",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "peerDependencies": {
     "@angular/core": ">=16.0.1"
   },
@@ -11,7 +11,7 @@
   },
   "sideEffects": false,
   "author": "Sebastian Post",
-  "description": "Immutable Signals for Angular 16+.",
+  "description": "Immutable Signals with improved change detection for Angular 16+.",
   "keywords": [
     "Angular",
     "signals",
