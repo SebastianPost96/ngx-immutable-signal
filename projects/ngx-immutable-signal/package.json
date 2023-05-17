@@ -1,6 +1,6 @@
 {
   "name": "ngx-immutable-signal",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "peerDependencies": {
     "@angular/core": ">=16.0.1"
   },
