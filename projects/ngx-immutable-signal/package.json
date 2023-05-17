@@ -1,12 +1,13 @@
 {
   "name": "ngx-immutable-signal",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "peerDependencies": {
     "@angular/core": ">=16.0.1"
   },
   "dependencies": {
     "tslib": "^2.3.0",
-    "immer": "^10.0.2"
+    "immer": "^10.0.2",
+    "fast-equals": "^5.0.1"
   },
   "sideEffects": false,
   "author": "Sebastian Post",

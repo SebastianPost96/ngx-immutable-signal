@@ -1,5 +1,6 @@
 import { WritableSignal } from '@angular/core';
 import { immutableSignal } from './immutable-signal';
+import { derived } from './derived';
 
 describe('Immutable Signal', () => {
   let testState: WritableSignal<{ a: number; b: string; c: boolean }>;

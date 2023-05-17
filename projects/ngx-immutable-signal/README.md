@@ -12,22 +12,29 @@ This library provides a `immutableSignal` function to create an Immutable Signal
 ```ts
 import { immutableSignal } from "ngx-immutable-signal";
 
-const mySignal = immutableSignal({ foo: { bar: 0 } });
+const initialValue = { foo: "bar" };
 
-// 1. Immutable Value
-mySignal().foo.bar = 5; // throws error
+// 1. immutable value
+const mySignal = immutableSignal(initialValue);
+mySignal().foo = "baz"; // throws error
 
-// 2. Reference Based Equality Function
-// --- log whenever "foo" changes
-const subSignal = computed(() => mySignal().foo, { equal: (a, b) => a === b });
-effect(() => console.log(subSignal()));
+// 2. new parent reference
+mySignal.mutate((state) => {
+  state.foo = "baz";
+});
+console.log(mySignal() === initialValue); // false
+```
 
-// --- update "bar" 10 times
-for (let i = 0; i < 10; i++) {
-  setTimeout(() => {
-    mySignal.mutate((state) => {
-      state.foo.bar = Math.random();
-    });
-  });
-}
+For simplified equality checking, the library function `derived` can be used. It works like `computed`, but replaces the second parameter with a string to define a built-in equality function.
+
+```ts
+import { immutableSignal } from "ngx-immutable-signal";
+
+const mySignal = immutableSignal({ name: "John Doe", numbers: [1, 2, 3, 4, 5] });
+
+// compares equality using ===
+const name = derived(() => mySignal().name);
+
+// compares content of the resulting array
+const evenNumbers = derived(() => mySignal().numbers.filter((num) => num % 2 === 0), "shallow");
 ```
