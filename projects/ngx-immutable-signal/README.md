@@ -1,6 +1,6 @@
 # ngx-immutable-signal
 
-Immutable Signals for Angular 16+.
+Immutable Signals with improved change detection for Angular 16+.
 
 ## Description
 
@@ -18,7 +18,7 @@ const initialValue = { foo: "bar" };
 const mySignal = immutableSignal(initialValue);
 mySignal().foo = "baz"; // throws error
 
-// 2. new parent reference
+// 2. updated parent reference
 mySignal.mutate((state) => {
   state.foo = "baz";
 });
