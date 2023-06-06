@@ -4,9 +4,10 @@ import { deepEqual, shallowEqual } from 'fast-equals';
 /** Create a computed Signal and provides a predefined equality function.
  * @param equalityDefinition
  * A string that determines the behaviour of the equality function.
- * * `default` - Checks for equality using the `===` operator
- * * `shallow` - Performs default check. if false, compares values based on their first depth of values.
- * * `deep` - Performs default check. if false, compares values based on their full depth of values.
+ *
+ * - `default` - Checks for equality using the `===` operator
+ * - `shallow` - Performs default check. if false, compares values based on their first depth of values.
+ * - `deep` - Performs default check. if false, compares values based on their full depth of values.
  */
 export function derived<T>(
   computation: () => T,

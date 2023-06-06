@@ -25,16 +25,20 @@ mySignal.mutate((state) => {
 console.log(mySignal() === initialValue); // false
 ```
 
-For simplified equality checking, the library function `derived` can be used. It works like `computed`, but replaces the second parameter with a string to define a built-in equality function.
+For optimized change detection, the library provides a `derived` function.  It works like `computed`, but replaces the second parameter with three pre-defined equality functions.
 
 ```ts
-import { immutableSignal } from "ngx-immutable-signal";
+import { immutableSignal, derived } from "ngx-immutable-signal";
 
 const mySignal = immutableSignal({ name: "John Doe", numbers: [1, 2, 3, 4, 5] });
 
-// compares equality using ===
+// default - checks for equality using ===
+// will only emit an update if a change was detected
 const name = derived(() => mySignal().name);
 
-// compares content of the resulting array
+// checks for equality by comparing items in the resulting array
 const evenNumbers = derived(() => mySignal().numbers.filter((num) => num % 2 === 0), "shallow");
+
+// checks for equality using an optimized deep compare algorithm
+const deepCopy = derived(() => JSON.parse(JSON.stringify(mySignal())), "deep");
 ```
